@@ -1,0 +1,33 @@
+{
+  "name": "dsh-custom-avatar",
+  "version": "0.1.0",
+  "description": "DSH 插件：把界面里的账号头像换成你自己的图片（本地图片，不上传任何服务器）",
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "avatar", "customize"],
+  "author": "JLumine",
+  "repository": { "type": "git", "url": "git+https://github.com/JLumine/dsh-custom-avatar.git" },
+  "homepage": "https://github.com/JLumine/dsh-custom-avatar#readme",
+  "bugs": { "url": "https://github.com/JLumine/dsh-custom-avatar/issues" },
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "README.md", "LICENSE"],
+  "license": "MIT",
+  "engines": { "dsh": ">=0.1.7-rc.1", "node": ">=22" },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  }
+}

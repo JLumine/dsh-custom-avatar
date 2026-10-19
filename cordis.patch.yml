@@ -1,0 +1,7 @@
+# dsh-custom-avatar —— DSH bundle patch（插件自带的挂载声明）
+# 装好之后，只要在 profile 的 dsh.profile.bundles 里列出本包名即生效。
+- insert:
+    - id: custom-avatar
+      name: dsh-custom-avatar
+      config:
+        enabled: true
